@@ -1,0 +1,22 @@
+$bgColor: rgb(48, 65, 86);
+$hoverBgColor: rgb(38, 52, 69);
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.site-layout__container {
+  height: 100%;
+}
+
+.site-layout__header {
+  line-height: 48px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.site-layout__aside {
+  overflow: hidden;
+  background: $bgColor;
+}
