@@ -4,6 +4,23 @@ html, body {
   height: 100%;
 }
 
+//  自定义滚动条
+.site-custom-scrollbar {
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  &::-webkit-scrollbar-track{
+    border-radius: 5px;
+    background-color: transparent;
+  }
+  &:hover {
+    &::-webkit-scrollbar-thumb {
+      background-color:#666a6e;
+    }
+  } 
+}
+
+
 .site-layout__container {
   height: 100%;
 }
@@ -16,9 +33,10 @@ html, body {
 
 .site-layout__aside {
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: overlay;
   background: $bgColor;
   height: 100%;
+  padding-right: 6px;
   .el-menu {
     border: none;
   }

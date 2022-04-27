@@ -1,5 +1,5 @@
 <template>
-  <el-aside class="site-layout__aside" width="210px" >
+  <el-aside class="site-custom-scrollbar site-layout__aside" width="210px" >
     <el-menu router background-color="#304156" text-color="#bfcbd9" active-text-color="#409eff">
       <el-menu-item index="/">
         <i class="el-icon-setting"></i>
