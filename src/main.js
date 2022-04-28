@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import TTable from './components/TTable'
 
 import 'normalize.css/normalize.css'
 
@@ -13,7 +14,9 @@ const app = document.createElement('div')
 app.setAttribute('id', 'app')
 document.body.append(app)
 
-Vue.use(ElementUI);
+Vue.use(ElementUI, { size: 'small' });
+
+Vue.component('t-table', TTable)
 
 new Vue({
   router,

@@ -20,7 +20,7 @@ html, body {
   } 
 }
 
-
+// 页面布局相关
 .site-layout__container {
   height: 100%;
 }
@@ -29,6 +29,10 @@ html, body {
   line-height: 48px;
   display: flex;
   justify-content: flex-end;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 1px 4px #ddd;
+  z-index: 1;
 }
 
 .site-layout__aside {
@@ -39,5 +43,12 @@ html, body {
   padding-right: 6px;
   .el-menu {
     border: none;
+  }
+}
+
+// 页面内容相关
+.site-page__container {
+  .site-page__functions {
+    margin-bottom: 1rem;
   }
 }
