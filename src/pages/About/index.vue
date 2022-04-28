@@ -9,6 +9,9 @@
     <p>
       <el-button @click="handleClick">点击</el-button>
     </p>
+    <p>
+      <router-link to="/404">404</router-link>
+    </p>
   </div>
 </template>
 

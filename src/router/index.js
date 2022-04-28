@@ -38,6 +38,14 @@ const routes = [
         component: () => import('@/pages/system/menu/list')
       }
     ]
+  },
+  {
+    path: '/404',
+    component: () => import('@/pages/others/404.vue')
+  },
+  {
+    path: '*',
+    redirect: '/404'
   }
 ]
 
