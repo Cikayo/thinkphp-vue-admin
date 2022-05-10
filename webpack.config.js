@@ -17,6 +17,9 @@ module.exports = {
     port: 8001,    //端口
     open: true,    //自动打开页面
     hot: true, // 热更新
+    proxy: {
+      '/sys': 'http://localhost:8000',
+    },
   },
   resolve: {
     extensions: ['.js', '.vue'],
