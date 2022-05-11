@@ -23,6 +23,7 @@
 <script>
   import { post } from '@/utils/request'
   import { userLoginUrl } from '@/api'
+  import { setToken } from '@/utils/auth'
   export default {
     name: 'Login',
     data() {
@@ -51,6 +52,8 @@
               console.log(res)
               this.$message.success(res.msg)
               this.loading = false
+              setToken(res.token)
+              this.$router.replace('/')
             }).catch(err => {
               this.loading = false
             })

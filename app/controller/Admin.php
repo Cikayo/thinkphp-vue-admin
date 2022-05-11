@@ -13,7 +13,8 @@ class Admin extends BaseController
     {
         return json([
             'code'  =>  200,
-            'msg'   =>  '登录成功'
+            'msg'   =>  '登录成功',
+            'token' =>  md5(time())
         ]);
     }
 
