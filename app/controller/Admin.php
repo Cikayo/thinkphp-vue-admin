@@ -17,5 +17,12 @@ class Admin extends BaseController
             'token' =>  md5(time())
         ]);
     }
+    public function logout()
+    {
+        return json([
+            'code'  =>  200,
+            'msg'   =>  '退出成功'
+        ]);
+    }
 
 }

@@ -1,11 +1,12 @@
 import Cookies from 'js-cookie'
 const TOKEN_KEY = 'token';
+const USER_KEY = 'user_name'
 
 /**
  * 获取 token，默认 key 为 TOKEN_KEY
  * @returns 
  */
- export function getToken(key = TOKEN_KEY) {
+export function getToken(key = TOKEN_KEY) {
   return Cookies.get(key)
 }
 
@@ -16,7 +17,7 @@ const TOKEN_KEY = 'token';
  * @returns 
  */
 export function setToken(token, key = TOKEN_KEY) {
-  return Cookies.set(key, token, { expires: 1 })
+  Cookies.set(key, token, { expires: 1 })
 }
 
 /**
@@ -24,5 +25,17 @@ export function setToken(token, key = TOKEN_KEY) {
  * @returns 
  */
 export function removeToken(key = TOKEN_KEY) {
-  return Cookies.remove(key)
+  Cookies.remove(key)
+}
+
+export function setStorage(val, key = USER_KEY) {
+  window.localStorage.setItem(key, val)
+}
+
+export function getStorage(key = USER_KEY) {
+  return window.localStorage.getItem(key)
+}
+
+export function removeStorage() {
+  window.localStorage.removeItem()
 }

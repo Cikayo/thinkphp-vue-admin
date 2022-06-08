@@ -13,4 +13,5 @@ use think\facade\Route;
 Route::get('/', 'admin/home');
 
 Route::post('/sys/user/login', 'admin/login');
+Route::post('/sys/user/logout', 'admin/logout');
 

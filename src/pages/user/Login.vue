@@ -21,9 +21,9 @@
 </template>
 
 <script>
-  import { post } from '@/utils/request'
-  import { userLoginUrl } from '@/api'
-  import { setToken } from '@/utils/auth'
+  import { mapActions } from 'pinia' //引入映射函数
+  import useUser from '@/store/index' //引入store
+
   export default {
     name: 'Login',
     data() {
@@ -44,15 +44,15 @@
       }
     },
     methods: {
+      ...mapActions(useUser, ['login']), //映射action
       handleLoginSubmit() {
         this.$refs.loginForm.validate((valid) => {
           if (valid) {
             this.loading = true
-            post(userLoginUrl).then(res => {
+            this.login(this.form).then(res => {
               console.log(res)
               this.$message.success(res.msg)
               this.loading = false
-              setToken(res.token)
               this.$router.replace('/')
             }).catch(err => {
               this.loading = false
@@ -93,9 +93,9 @@
   }
   .login-title {
     text-align: center;
-    font-size: 20px;
+    font-size: 1.5em;
     font-weight: bold;
-    margin-bottom: 14px;
+    margin-bottom: 1.5rem;
   }
   .site-login-functions {
     margin-top: 20px;
@@ -105,7 +105,7 @@
     width: 100%;
     height: 100%;
     position: absolute;
-    opacity: 0.8;
+    opacity: 0.9;
     background: url("../../assets/bg.jpg") no-repeat center 100%;
   }
 }
