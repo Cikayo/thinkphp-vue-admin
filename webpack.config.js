@@ -18,7 +18,12 @@ module.exports = {
     open: true,    //自动打开页面
     hot: true, // 热更新
     proxy: {
-      '/sys': 'http://localhost:8000',
+      '/sys': {
+        target: 'http://localhost:8000/',
+        changeOrigin: false,
+        secure: false,
+        pathRewrite: { '^/sys': '' }, // 后端接口中没有前缀，则去掉
+      }
     },
   },
   resolve: {
